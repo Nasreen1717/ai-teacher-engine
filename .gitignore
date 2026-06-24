@@ -1,0 +1,9 @@
+.env
+.env.*
+*.env
+test_groq.py
+.venv/
+venv/
+__pycache__/
+*.pyc
+uv.lock
