@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from configs.settings import settings
 from agent.graph import agent_graph
+from routers.exam_router import router as exam_router
 
 app = FastAPI(
     title=settings.APP_TITLE,
@@ -15,6 +16,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+app.include_router(exam_router)
 
 # Request model
 class ChatRequest(BaseModel):
